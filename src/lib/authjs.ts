@@ -1,17 +1,17 @@
-import { DefaultSession, NextAuthOptions } from "next-auth"
-import { ProviderType } from "next-auth/providers"
-import KakaoProvider from "next-auth/providers/kakao"
-import { addUser, getUser } from "@/gql/user"
-import { KakaoProfile, User } from "@/models/user"
+import { DefaultSession, NextAuthOptions } from 'next-auth'
+import { ProviderType } from 'next-auth/providers'
+import KakaoProvider from 'next-auth/providers/kakao'
+import { addUser, getUser } from '@/gql/user'
+import { KakaoProfile, User } from '@/models/user'
 
-declare module "next-auth" {
+declare module 'next-auth' {
   interface Account {
     // 인가 코드로 받는 토큰값 포함
     provider: string
     type: ProviderType
     providerAccountId: string
     access_token: string
-    token_type: "bearer"
+    token_type: 'bearer'
     refresh_token: string
     expires_at: number
     scope: string
@@ -31,7 +31,7 @@ declare module "next-auth" {
 }
 export const authOptions: NextAuthOptions = {
   session: {
-    strategy: "jwt",
+    strategy: 'jwt',
   },
   secret: process.env.NEXTAUTH_SECRET_KEY!,
   providers: [

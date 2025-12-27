@@ -1,6 +1,6 @@
 export function formatCardNumber(cardNumber: string): string {
   const formatted: string =
-    cardNumber.slice(0, 4) + " - " + cardNumber.slice(4, 8) + " - " + "****" + " - " + cardNumber.slice(12)
+    cardNumber.slice(0, 4) + ' - ' + cardNumber.slice(4, 8) + ' - ' + '****' + ' - ' + cardNumber.slice(12)
 
   return formatted
 }
@@ -32,9 +32,9 @@ export function formatDateString(inputDate: string): string {
 }
 
 export function formatLeftTimeString(inputTime: string): string {
-  const [hours, minutes, seconds] = inputTime.split(":").map(Number)
+  const [hours, minutes, seconds] = inputTime.split(':').map(Number)
 
-  let formattedTime = ""
+  let formattedTime = ''
   if (hours > 0) {
     formattedTime += `${hours}시간 `
   }

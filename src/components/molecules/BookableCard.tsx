@@ -1,4 +1,4 @@
-import { Bookable } from "@/models/bookable"
+import { Bookable } from '@/models/bookable'
 
 function BookableCard(props: { bookable: Bookable }) {
   const { bookable } = props

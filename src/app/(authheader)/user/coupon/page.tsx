@@ -1,11 +1,11 @@
-import { getUserIdAfterCheckAuthRedirect } from "@/actions/authjs"
-import { getAllUserCoupon } from "@/actions/usercoupon"
-import BottomSheetButton from "@/components/molecules/Button/BottomSheetButton"
-import BottomSheetModal from "@/components/molecules/Modal/BottomSheetModal"
-import SubTitle from "@/components/molecules/Title/SubTitle"
-import Title from "@/components/molecules/Title/Title"
-import StretchedUserCoupon from "@/components/organisms/StretchedUserCoupon"
-import { UserCoupon } from "@/models/coupon"
+import { getUserIdAfterCheckAuthRedirect } from '@/actions/authjs'
+import { getAllUserCoupon } from '@/actions/usercoupon'
+import BottomSheetButton from '@/components/molecules/Button/BottomSheetButton'
+import BottomSheetModal from '@/components/molecules/Modal/BottomSheetModal'
+import SubTitle from '@/components/molecules/Title/SubTitle'
+import Title from '@/components/molecules/Title/Title'
+import StretchedUserCoupon from '@/components/organisms/StretchedUserCoupon'
+import { UserCoupon } from '@/models/coupon'
 
 export default async function UserCouponPage() {
   const userId = await getUserIdAfterCheckAuthRedirect()

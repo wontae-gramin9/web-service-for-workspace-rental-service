@@ -1,17 +1,17 @@
-import { headers } from "next/headers"
-import Link from "next/link"
-import { RedirectType, redirect } from "next/navigation"
-import { getUserIdAfterCheckAuthRedirect } from "@/actions/authjs"
-import { getBoookableById, getUserActivatedBoookable, moveToNewBookable } from "@/actions/booth"
-import BookableCard from "@/components/molecules/BookableCard"
-import Button from "@/components/molecules/Button/Button"
-import SubTitle from "@/components/molecules/Title/SubTitle"
-import Title from "@/components/molecules/Title/Title"
+import { headers } from 'next/headers'
+import Link from 'next/link'
+import { RedirectType, redirect } from 'next/navigation'
+import { getUserIdAfterCheckAuthRedirect } from '@/actions/authjs'
+import { getBoookableById, getUserActivatedBoookable, moveToNewBookable } from '@/actions/booth'
+import BookableCard from '@/components/molecules/BookableCard'
+import Button from '@/components/molecules/Button/Button'
+import SubTitle from '@/components/molecules/Title/SubTitle'
+import Title from '@/components/molecules/Title/Title'
 
 export default async function BookableMovePage() {
   const userId = await getUserIdAfterCheckAuthRedirect()
-  const urlObject = new URL(headers().get("x-url")!)
-  const currentBookableId = urlObject.searchParams.get("id") ?? "bookableIdError"
+  const urlObject = new URL(headers().get('x-url')!)
+  const currentBookableId = urlObject.searchParams.get('id') ?? 'bookableIdError'
   const currentBookable = await getBoookableById(currentBookableId)
   const [userActivatedBookable] = await getUserActivatedBoookable(userId, [currentBookable.bookableType.type])
   const moveToNewBookableByBookableId = moveToNewBookable.bind(null, userId, currentBookableId)

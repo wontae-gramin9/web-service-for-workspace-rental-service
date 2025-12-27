@@ -1,21 +1,21 @@
-import { headers } from "next/headers"
-import Link from "next/link"
-import { getUserIdAfterCheckAuthRedirect } from "@/actions/authjs"
-import { getTicketFrameById } from "@/actions/ticketframe"
-import { getApplicableUserCouponByTicketId } from "@/actions/usercoupon"
-import BottomSheetButton from "@/components/molecules/Button/BottomSheetButton"
-import BottomSheetModal from "@/components/molecules/Modal/BottomSheetModal"
-import StretchedTicket from "@/components/molecules/Ticket/StretchedTicket"
-import SubTitle from "@/components/molecules/Title/SubTitle"
-import Title from "@/components/molecules/Title/Title"
-import BorderCardContainer from "@/components/organisms/BorderCardContainer"
-import StretchedUserCoupon from "@/components/organisms/StretchedUserCoupon"
-import { UserCoupon } from "@/models/coupon"
-import { TicketFrame } from "@/models/ticket"
+import { headers } from 'next/headers'
+import Link from 'next/link'
+import { getUserIdAfterCheckAuthRedirect } from '@/actions/authjs'
+import { getTicketFrameById } from '@/actions/ticketframe'
+import { getApplicableUserCouponByTicketId } from '@/actions/usercoupon'
+import BottomSheetButton from '@/components/molecules/Button/BottomSheetButton'
+import BottomSheetModal from '@/components/molecules/Modal/BottomSheetModal'
+import StretchedTicket from '@/components/molecules/Ticket/StretchedTicket'
+import SubTitle from '@/components/molecules/Title/SubTitle'
+import Title from '@/components/molecules/Title/Title'
+import BorderCardContainer from '@/components/organisms/BorderCardContainer'
+import StretchedUserCoupon from '@/components/organisms/StretchedUserCoupon'
+import { UserCoupon } from '@/models/coupon'
+import { TicketFrame } from '@/models/ticket'
 
 export default async function ApplicableUserCouponPage() {
-  const urlObject = new URL(headers().get("x-url")!)
-  const selectedTicketId = urlObject.searchParams.get("ticketId") ?? "ticketIdError"
+  const urlObject = new URL(headers().get('x-url')!)
+  const selectedTicketId = urlObject.searchParams.get('ticketId') ?? 'ticketIdError'
   const selectedTicketFrame: TicketFrame = await getTicketFrameById(selectedTicketId)
   const userId = await getUserIdAfterCheckAuthRedirect()
   const allApplicableUserCoupon = await getApplicableUserCouponByTicketId(userId, selectedTicketId)

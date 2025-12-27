@@ -1,8 +1,8 @@
-import localFont from "next/font/local"
-import { ApolloWrapper } from "@/app/ApolloWrapper"
-import "@/app/globals.css"
+import localFont from 'next/font/local'
+import { ApolloWrapper } from '@/app/ApolloWrapper'
+import '@/app/globals.css'
 
-const PRETENDARD_FONT = localFont({ src: "../../../static/fonts/Pretendard.woff2" })
+const PRETENDARD_FONT = localFont({ src: '../../../static/fonts/Pretendard.woff2' })
 
 export default function NoneAuthLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -1,7 +1,7 @@
-import { getAllBookable } from "@/actions/booth"
-import SubTitle from "@/components/molecules/Title/SubTitle"
-import Title from "@/components/molecules/Title/Title"
-import { Bookable } from "@/models/bookable"
+import { getAllBookable } from '@/actions/booth'
+import SubTitle from '@/components/molecules/Title/SubTitle'
+import Title from '@/components/molecules/Title/Title'
+import { Bookable } from '@/models/bookable'
 
 function getBoothStatus(bookables: Bookable[]): {
   occupiedBoothStatus: Map<string, number[]>

@@ -1,19 +1,19 @@
-import Image from "next/image"
-import type { CouponFrame } from "@/models/coupon"
+import Image from 'next/image'
+import type { CouponFrame } from '@/models/coupon'
 
 const StretchedCoupon = (props: { couponFrame: CouponFrame }) => {
   const { couponFrame } = props
 
-  const borderColors: { [key in CouponFrame["type"]]: string } = {
-    sale: "border-teal-100",
-    timebonus: "border-orange-100",
-    discount: "border-red-100",
+  const borderColors: { [key in CouponFrame['type']]: string } = {
+    sale: 'border-teal-100',
+    timebonus: 'border-orange-100',
+    discount: 'border-red-100',
   }
 
-  const bookableColors: { [key in CouponFrame["type"]]: string } = {
-    sale: "bg-teal-500",
-    timebonus: "bg-orange-700",
-    discount: "bg-red-700",
+  const bookableColors: { [key in CouponFrame['type']]: string } = {
+    sale: 'bg-teal-500',
+    timebonus: 'bg-orange-700',
+    discount: 'bg-red-700',
   }
 
   return (

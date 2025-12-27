@@ -1,8 +1,8 @@
-"use server"
+'use server'
 
-import request, { gql } from "graphql-request"
-import { RedirectType, redirect } from "next/navigation"
-import { Bookable } from "@/models/bookable"
+import request, { gql } from 'graphql-request'
+import { RedirectType, redirect } from 'next/navigation'
+import { Bookable } from '@/models/bookable'
 
 export async function getAllBookable() {
   const GET_ALL_BOOTH = gql`
@@ -119,6 +119,6 @@ export async function moveToNewBookable(userId: string, bookableId: string) {
   )
 
   const resultCode = data.moveBooking.resultCode
-  const result = resultCode === "0000" ? "success" : "fail"
+  const result = resultCode === '0000' ? 'success' : 'fail'
   redirect(`/redirection/move/${result}`, RedirectType.replace)
 }

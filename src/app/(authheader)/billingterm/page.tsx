@@ -1,14 +1,14 @@
-import { headers } from "next/headers"
-import { redirect } from "next/navigation"
-import Button from "@/components/molecules/Button/Button"
-import { Dialog } from "@/components/molecules/Modal/Dialog"
-import SubTitle from "@/components/molecules/Title/SubTitle"
-import Title from "@/components/molecules/Title/Title"
-import BillingKeyTerm from "@/components/organisms/BillingKeyTerm"
+import { headers } from 'next/headers'
+import { redirect } from 'next/navigation'
+import Button from '@/components/molecules/Button/Button'
+import { Dialog } from '@/components/molecules/Modal/Dialog'
+import SubTitle from '@/components/molecules/Title/SubTitle'
+import Title from '@/components/molecules/Title/Title'
+import BillingKeyTerm from '@/components/organisms/BillingKeyTerm'
 
 function BillingTermPage() {
-  const urlObject = new URL(headers().get("x-url")!)
-  const ticketId = urlObject.searchParams.get("ticketId")
+  const urlObject = new URL(headers().get('x-url')!)
+  const ticketId = urlObject.searchParams.get('ticketId')
   return (
     <div>
       <Title text="정기결제 약관 동의" />
@@ -25,7 +25,7 @@ function BillingTermPage() {
           content={<BillingKeyTerm />}
           actionName="동의하고 결제하러 가기"
           action={async () => {
-            "use server" // @클라 04/01 functions cannot be passed directly to client components 워크어라운드
+            'use server' // @클라 04/01 functions cannot be passed directly to client components 워크어라운드
             redirect(`/payment?ticketId=${ticketId}`)
           }}
         ></Dialog>

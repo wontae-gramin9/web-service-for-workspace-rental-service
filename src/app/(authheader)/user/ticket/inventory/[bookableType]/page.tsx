@@ -1,18 +1,18 @@
-import { headers } from "next/headers"
-import Link from "next/link"
-import { getUserIdAfterCheckAuthRedirect } from "@/actions/authjs"
-import { getAllUserTicketByBookable, enterBookableByUserTicket } from "@/actions/userticket"
-import BottomSheetButton from "@/components/molecules/Button/BottomSheetButton"
-import Button from "@/components/molecules/Button/Button"
-import BottomSheetModal from "@/components/molecules/Modal/BottomSheetModal"
-import StretchedTicket from "@/components/molecules/Ticket/StretchedTicket"
-import SubTitle from "@/components/molecules/Title/SubTitle"
-import Title from "@/components/molecules/Title/Title"
-import { UserTicket } from "@/models/ticket"
+import { headers } from 'next/headers'
+import Link from 'next/link'
+import { getUserIdAfterCheckAuthRedirect } from '@/actions/authjs'
+import { getAllUserTicketByBookable, enterBookableByUserTicket } from '@/actions/userticket'
+import BottomSheetButton from '@/components/molecules/Button/BottomSheetButton'
+import Button from '@/components/molecules/Button/Button'
+import BottomSheetModal from '@/components/molecules/Modal/BottomSheetModal'
+import StretchedTicket from '@/components/molecules/Ticket/StretchedTicket'
+import SubTitle from '@/components/molecules/Title/SubTitle'
+import Title from '@/components/molecules/Title/Title'
+import { UserTicket } from '@/models/ticket'
 
 export default async function UserTicketInventoryPage({ params }: { params: { bookableType: string } }) {
-  const urlObject = new URL(headers().get("x-url")!)
-  const bookableId = urlObject.searchParams.get("bookableId")!
+  const urlObject = new URL(headers().get('x-url')!)
+  const bookableId = urlObject.searchParams.get('bookableId')!
   const { bookableType } = params
   const userId = await getUserIdAfterCheckAuthRedirect()
   const allUserTicketByBookable = await getAllUserTicketByBookable(userId, bookableType)

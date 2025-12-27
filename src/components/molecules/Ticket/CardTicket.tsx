@@ -1,22 +1,22 @@
-import Image from "next/image"
-import { BookableType } from "@/models/bookable"
-import type { TicketFrame } from "@/models/ticket"
+import Image from 'next/image'
+import { BookableType } from '@/models/bookable'
+import type { TicketFrame } from '@/models/ticket'
 
 const CardTicket = (props: { ticketFrame: TicketFrame }) => {
   const { ticketFrame } = props
 
-  const borderColors: { [key in BookableType["type"]]: string } = {
-    seat: "border-blue-100",
-    meetingroom: "border-yellow-500",
-    rentbox: "border-teal-100",
-    locker: "border-purple-100",
+  const borderColors: { [key in BookableType['type']]: string } = {
+    seat: 'border-blue-100',
+    meetingroom: 'border-yellow-500',
+    rentbox: 'border-teal-100',
+    locker: 'border-purple-100',
   }
 
-  const bookableColors: { [key in BookableType["type"]]: string } = {
-    seat: "bg-blue-500",
-    meetingroom: "bg-yellow-500",
-    rentbox: "bg-teal-300",
-    locker: "bg-purple-500",
+  const bookableColors: { [key in BookableType['type']]: string } = {
+    seat: 'bg-blue-500',
+    meetingroom: 'bg-yellow-500',
+    rentbox: 'bg-teal-300',
+    locker: 'bg-purple-500',
   }
 
   return (
@@ -25,7 +25,7 @@ const CardTicket = (props: { ticketFrame: TicketFrame }) => {
         className={`flex ${borderColors[ticketFrame.bookableType.type]} w-56 flex-col overflow-hidden rounded-lg border border-solid bg-white-300`}
       >
         <div
-          className={`flex ${bookableColors[ticketFrame.bookableType["type"]]} flex-row items-center justify-center gap-2 py-2`}
+          className={`flex ${bookableColors[ticketFrame.bookableType['type']]} flex-row items-center justify-center gap-2 py-2`}
         >
           <h3 className="text-lg font-bold text-white-100">{ticketFrame.name}</h3>
         </div>

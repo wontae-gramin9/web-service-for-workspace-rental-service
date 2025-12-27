@@ -1,4 +1,4 @@
-import { TypedDocumentNode, gql } from "@apollo/client"
+import { TypedDocumentNode, gql } from '@apollo/client'
 
 export const GET_ALL_TICKET_FRAME: TypedDocumentNode = gql`
   query GetAllTicketFrame($type: String) {

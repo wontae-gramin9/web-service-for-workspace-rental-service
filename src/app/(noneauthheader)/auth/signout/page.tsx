@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { signOut } from "next-auth/react"
-import Button from "@/components/molecules/Button/Button"
-import SubTitle from "@/components/molecules/Title/SubTitle"
-import Title from "@/components/molecules/Title/Title"
+import { signOut } from 'next-auth/react'
+import Button from '@/components/molecules/Button/Button'
+import SubTitle from '@/components/molecules/Title/SubTitle'
+import Title from '@/components/molecules/Title/Title'
 export default function SignOutPage() {
   return (
     <>
@@ -24,7 +24,7 @@ const SignOutButtonSection = () => {
           <Button
             color="red"
             onClick={() => {
-              signOut({ callbackUrl: "/" })
+              signOut({ callbackUrl: '/' })
             }}
           >
             로그아웃

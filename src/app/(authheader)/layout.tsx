@@ -1,20 +1,20 @@
-import localFont from "next/font/local"
-import { Toaster } from "react-hot-toast"
-import { ApolloWrapper } from "@/app/ApolloWrapper"
-import "@/app/globals.css"
-import AuthHeader from "@/components/organisms/Header/Auth"
+import localFont from 'next/font/local'
+import { Toaster } from 'react-hot-toast'
+import { ApolloWrapper } from '@/app/ApolloWrapper'
+import '@/app/globals.css'
+import AuthHeader from '@/components/organisms/Header/Auth'
 
 export const metadata = {
   title: {
-    default: "궁극의 창작공간",
+    default: '궁극의 창작공간',
   },
-  description: "궁극의 창작공간",
+  description: '궁극의 창작공간',
   icons: {
-    icon: "../favicon.ico",
+    icon: '../favicon.ico',
   },
 }
 
-const PRETENDARD_FONT = localFont({ src: "../../static/fonts/Pretendard.woff2" })
+const PRETENDARD_FONT = localFont({ src: '../../static/fonts/Pretendard.woff2' })
 
 export default function NoneAuthLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,14 +25,14 @@ export default function NoneAuthLayout({ children }: { children: React.ReactNode
           toastOptions={{
             success: {
               iconTheme: {
-                primary: "#00756f",
-                secondary: "#009591",
+                primary: '#00756f',
+                secondary: '#009591',
               },
             },
             error: {
               iconTheme: {
-                primary: "#a50048",
-                secondary: "#fafaff",
+                primary: '#a50048',
+                secondary: '#fafaff',
               },
             },
           }}

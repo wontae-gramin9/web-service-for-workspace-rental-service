@@ -5,7 +5,7 @@ type SubTitleProps = {
 
 function SubTitle(props: SubTitleProps) {
   const { text, bold } = props
-  const fontBold = bold ? "font-bold" : ""
+  const fontBold = bold ? 'font-bold' : ''
   return <h3 className={`text-center ${fontBold}`}>{text}</h3>
 }
 

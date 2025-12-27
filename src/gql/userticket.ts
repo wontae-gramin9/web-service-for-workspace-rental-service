@@ -1,4 +1,4 @@
-import request, { gql } from "graphql-request"
+import request, { gql } from 'graphql-request'
 
 // @클라 04/04 클라이언트 컴포넌트에서 사용되기 때문에 next/navigation의 redirect 사용 불가
 // @클라 때문에 result값을 반환해서 컴포넌트에서 useRouter 사용
@@ -21,7 +21,7 @@ export async function refundUserTicket(ticketId: string) {
   )
 
   const resultCode = data.refundTicket.resultCode
-  const result = resultCode === "0000" ? "success" : "fail"
+  const result = resultCode === '0000' ? 'success' : 'fail'
   return result
 }
 
@@ -43,6 +43,6 @@ export async function unsubscribeUserTicket(ticketId: string) {
   )
 
   const resultCode = data.cancelSubscriptionTicket.resultCode
-  const result = resultCode === "0000" ? "success" : "fail"
+  const result = resultCode === '0000' ? 'success' : 'fail'
   return result
 }

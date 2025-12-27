@@ -1,16 +1,16 @@
-import { getUserIdAfterCheckAuthRedirect } from "@/actions/authjs"
-import { deleteCardByCardId, requestPaymentByUserCard } from "@/actions/payment"
-import Button from "@/components/molecules/Button/Button"
-import { Dialog } from "@/components/molecules/Modal/Dialog"
-import SubTitle from "@/components/molecules/Title/SubTitle"
-import { Card } from "@/models/card"
-import { formatCardNumber } from "@/utils/format"
+import { getUserIdAfterCheckAuthRedirect } from '@/actions/authjs'
+import { deleteCardByCardId, requestPaymentByUserCard } from '@/actions/payment'
+import Button from '@/components/molecules/Button/Button'
+import { Dialog } from '@/components/molecules/Modal/Dialog'
+import SubTitle from '@/components/molecules/Title/SubTitle'
+import { Card } from '@/models/card'
+import { formatCardNumber } from '@/utils/format'
 
 export default async function UserCard(props: { card: Card; ticketId: string; couponId: string | null }) {
   const { card, ticketId, couponId } = props
   const userId = await getUserIdAfterCheckAuthRedirect()
-  const isRepresentative = card.representative === "0"
-  const color = isRepresentative ? "bg-blue-300" : "bg-blue-100"
+  const isRepresentative = card.representative === '0'
+  const color = isRepresentative ? 'bg-blue-300' : 'bg-blue-100'
   const makeOrderByUserCardId = requestPaymentByUserCard.bind(null, userId, card.id, ticketId, couponId)
   const deleteUserCardByCardId = deleteCardByCardId.bind(null, card.id, ticketId, couponId)
   return (

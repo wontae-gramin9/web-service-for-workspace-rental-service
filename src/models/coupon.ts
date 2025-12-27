@@ -21,5 +21,5 @@ export type CouponFrame = {
   //     bookableType: BookableType
   //   },
   // ]
-  type: "timebonus" | "sale" | "discount"
+  type: 'timebonus' | 'sale' | 'discount'
 }

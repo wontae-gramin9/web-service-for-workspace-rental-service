@@ -1,11 +1,11 @@
-import Link from "next/link"
-import { getUserIdAfterCheckAuthRedirect } from "@/actions/authjs"
-import { getAllUserTicket } from "@/actions/userticket"
-import Button from "@/components/molecules/Button/Button"
-import SubTitle from "@/components/molecules/Title/SubTitle"
-import Title from "@/components/molecules/Title/Title"
-import AccordionUserTicket from "@/components/organisms/AccordionUserTicket"
-import type { UserTicket } from "@/models/ticket"
+import Link from 'next/link'
+import { getUserIdAfterCheckAuthRedirect } from '@/actions/authjs'
+import { getAllUserTicket } from '@/actions/userticket'
+import Button from '@/components/molecules/Button/Button'
+import SubTitle from '@/components/molecules/Title/SubTitle'
+import Title from '@/components/molecules/Title/Title'
+import AccordionUserTicket from '@/components/organisms/AccordionUserTicket'
+import type { UserTicket } from '@/models/ticket'
 
 export default async function UserTicketManagePage() {
   const userId = await getUserIdAfterCheckAuthRedirect()
@@ -43,8 +43,8 @@ export default async function UserTicketManagePage() {
               <SubTitle text="현재 보관중인 사용권이 없습니다. 아래 버튼을 누르시면 권종에 따라 구매하실 수 있습니다." />
               <div className="flex flex-row justify-center gap-2">
                 {[
-                  ["oneoff", "일회권"],
-                  ["billing", "정기권"],
+                  ['oneoff', '일회권'],
+                  ['billing', '정기권'],
                 ].map(([ticketBillingType, ticketBillingName]) => (
                   <Link key={ticketBillingType} href={`/ticket/${ticketBillingType}`}>
                     <Button>{ticketBillingName}</Button>

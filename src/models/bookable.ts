@@ -7,8 +7,8 @@ export type Bookable = {
 }
 
 export type BookableType = {
-  name: "좌석" | "회의실" | "대여함" | "사물함"
-  type: "seat" | "meetingroom" | "rentbox" | "locker"
+  name: '좌석' | '회의실' | '대여함' | '사물함'
+  type: 'seat' | 'meetingroom' | 'rentbox' | 'locker'
 }
 
 export type SeatType = {

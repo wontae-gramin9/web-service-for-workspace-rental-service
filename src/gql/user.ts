@@ -1,5 +1,5 @@
-import request, { gql } from "graphql-request"
-import { User } from "@/models/user"
+import request, { gql } from 'graphql-request'
+import { User } from '@/models/user'
 
 export async function getUser(userId: string) {
   const GET_USER_BY_ID = gql`
@@ -24,7 +24,7 @@ export async function getUser(userId: string) {
     const user = data.user[0]
     return user
   } catch (e) {
-    throw Error("user: 해당 userId를 가진 user가 없습니다.")
+    throw Error('user: 해당 userId를 가진 user가 없습니다.')
   }
 }
 
@@ -64,8 +64,8 @@ export async function addUser(user: User) {
     },
   )
   const resultCode = data.addUser.resultCode
-  if (resultCode != "0000") {
-    throw Error("AddUser: failed to save user")
+  if (resultCode != '0000') {
+    throw Error('AddUser: failed to save user')
   }
   return resultCode
 }

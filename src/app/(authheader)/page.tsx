@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from 'next/link'
 
 export default function HomePage() {
   return (
@@ -49,7 +49,7 @@ const HomeNavButton = (props: NavButtonProps) => {
     <Link href={props.destination}>
       <div className="flex size-20 items-center justify-center rounded-lg bg-blue-700 hover:bg-blue-500">
         <h3 className="font-medium  text-white-100">
-          {props.label.split("\n").map((str, idx) => (
+          {props.label.split('\n').map((str, idx) => (
             <p key={idx}>{str}</p>
           ))}
         </h3>
@@ -63,7 +63,7 @@ const HomeExternalLinkButton = (props: NavButtonProps) => {
     <a href={props.destination}>
       <div className="flex size-20 items-center justify-center rounded-lg bg-blue-700 hover:bg-blue-500">
         <h3 className="font-medium  text-white-100">
-          {props.label.split("\n").map((str, idx) => (
+          {props.label.split('\n').map((str, idx) => (
             <p key={idx}>{str}</p>
           ))}
         </h3>

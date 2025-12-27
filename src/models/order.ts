@@ -6,8 +6,8 @@ export type Order = {
 }
 
 export const order1: Order = {
-  userId: "userId",
-  cardId: "cardId",
-  ticketId: "ticketId",
-  couponId: "couponId",
+  userId: 'userId',
+  cardId: 'cardId',
+  ticketId: 'ticketId',
+  couponId: 'couponId',
 }

@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import Script from "next/script"
-import Button from "@/components/molecules/Button/Button"
-import { executeAuthPaymentPopup, getPreNicePayOrderInfo } from "@/lib/nicepay"
-import { Order } from "@/models/order"
+import Script from 'next/script'
+import Button from '@/components/molecules/Button/Button'
+import { executeAuthPaymentPopup, getPreNicePayOrderInfo } from '@/lib/nicepay'
+import { Order } from '@/models/order'
 
 type NicepayPopupButtonProps = {
   userId: string
@@ -24,7 +24,7 @@ export default function NicepayPopupButton(props: NicepayPopupButtonProps) {
             orderId,
             ticketName: orderName,
             price,
-            paymentMethod: "cardAndEasyPay",
+            paymentMethod: 'cardAndEasyPay',
           })
         }}
       >

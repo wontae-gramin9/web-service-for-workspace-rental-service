@@ -1,10 +1,10 @@
-import { getUserIdAfterCheckAuthRedirect } from "@/actions/authjs"
-import { getCouponFrame } from "@/actions/couponframe"
-import { registerUserCoupon } from "@/actions/usercoupon"
-import Button from "@/components/molecules/Button/Button"
-import StretchedCoupon from "@/components/molecules/Coupon/StretchedCoupon"
-import SubTitle from "@/components/molecules/Title/SubTitle"
-import Title from "@/components/molecules/Title/Title"
+import { getUserIdAfterCheckAuthRedirect } from '@/actions/authjs'
+import { getCouponFrame } from '@/actions/couponframe'
+import { registerUserCoupon } from '@/actions/usercoupon'
+import Button from '@/components/molecules/Button/Button'
+import StretchedCoupon from '@/components/molecules/Coupon/StretchedCoupon'
+import SubTitle from '@/components/molecules/Title/SubTitle'
+import Title from '@/components/molecules/Title/Title'
 
 export default async function CouponRegisterPage({ params }: { params: { couponFrameId: string } }) {
   const { couponFrameId } = params

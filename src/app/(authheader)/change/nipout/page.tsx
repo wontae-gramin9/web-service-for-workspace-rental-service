@@ -1,16 +1,16 @@
-import Link from "next/link"
-import { getUserIdAfterCheckAuthRedirect } from "@/actions/authjs"
-import { getUserActivatedBoookable } from "@/actions/booth"
-import { nipoutUserTicket } from "@/actions/userticket"
-import BookableCard from "@/components/molecules/BookableCard"
-import Button from "@/components/molecules/Button/Button"
-import SubTitle from "@/components/molecules/Title/SubTitle"
-import Title from "@/components/molecules/Title/Title"
-import { Bookable } from "@/models/bookable"
+import Link from 'next/link'
+import { getUserIdAfterCheckAuthRedirect } from '@/actions/authjs'
+import { getUserActivatedBoookable } from '@/actions/booth'
+import { nipoutUserTicket } from '@/actions/userticket'
+import BookableCard from '@/components/molecules/BookableCard'
+import Button from '@/components/molecules/Button/Button'
+import SubTitle from '@/components/molecules/Title/SubTitle'
+import Title from '@/components/molecules/Title/Title'
+import { Bookable } from '@/models/bookable'
 
 export default async function NipoutPage() {
   const userId = await getUserIdAfterCheckAuthRedirect()
-  const userActivatedBookableList = await getUserActivatedBoookable(userId, ["seat", "meetingroom"])
+  const userActivatedBookableList = await getUserActivatedBoookable(userId, ['seat', 'meetingroom'])
   return (
     <div className="flex flex-col gap-2">
       <Title text="외출" />

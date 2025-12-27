@@ -1,17 +1,17 @@
-import { headers } from "next/headers"
-import Link from "next/link"
-import { checkAuthRedirect } from "@/actions/authjs"
-import Button from "@/components/molecules/Button/Button"
-import SubTitle from "@/components/molecules/Title/SubTitle"
-import Title from "@/components/molecules/Title/Title"
-import BorderCardContainer from "@/components/organisms/BorderCardContainer"
-import OrderCard from "@/components/organisms/OrderCard"
+import { headers } from 'next/headers'
+import Link from 'next/link'
+import { checkAuthRedirect } from '@/actions/authjs'
+import Button from '@/components/molecules/Button/Button'
+import SubTitle from '@/components/molecules/Title/SubTitle'
+import Title from '@/components/molecules/Title/Title'
+import BorderCardContainer from '@/components/organisms/BorderCardContainer'
+import OrderCard from '@/components/organisms/OrderCard'
 
 export default async function OrderPage() {
   await checkAuthRedirect()
-  const urlObject = new URL(headers().get("x-url")!)
-  const selectedTicketId = urlObject.searchParams.get("ticketId") ?? "ticketIdError"
-  const selectedCouponId = urlObject.searchParams.get("couponId")
+  const urlObject = new URL(headers().get('x-url')!)
+  const selectedTicketId = urlObject.searchParams.get('ticketId') ?? 'ticketIdError'
+  const selectedCouponId = urlObject.searchParams.get('couponId')
   return (
     <div className="flex flex-col gap-2">
       <Title text="일회권 결제" />

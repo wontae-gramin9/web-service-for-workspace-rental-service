@@ -1,7 +1,7 @@
-"use server"
-import request, { gql } from "graphql-request"
-import { RedirectType, redirect } from "next/navigation"
-import { UserTicket } from "@/models/ticket"
+'use server'
+import request, { gql } from 'graphql-request'
+import { RedirectType, redirect } from 'next/navigation'
+import { UserTicket } from '@/models/ticket'
 
 export async function getAllUserTicket(userId: string) {
   const GET_ALL_USERTICKET = gql`
@@ -100,7 +100,7 @@ export async function enterBookableByUserTicket(userId: string, ticketId: string
   )
 
   const resultCode = data.enteringBooking.resultCode
-  const result = resultCode === "0000" ? "success" : "fail"
+  const result = resultCode === '0000' ? 'success' : 'fail'
   redirect(`/redirection/useuserticket/${result}`, RedirectType.replace)
 }
 
@@ -123,7 +123,7 @@ export async function nipoutUserTicket(userId: string, ticketId: string) {
   )
 
   const resultCode = data.outingBooking.resultCode
-  const result = resultCode === "0000" ? "success" : "fail"
+  const result = resultCode === '0000' ? 'success' : 'fail'
   redirect(`/redirection/nipout/${result}`, RedirectType.replace)
 }
 
@@ -145,6 +145,6 @@ export async function checkoutUserTicket(userId: string, ticketId: string) {
   )
 
   const resultCode = data.leavingBooking.resultCode
-  const result = resultCode === "0000" ? "success" : "fail"
+  const result = resultCode === '0000' ? 'success' : 'fail'
   redirect(`/redirection/checkout/${result}`, RedirectType.replace)
 }

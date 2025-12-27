@@ -1,4 +1,4 @@
-import { BookableType } from "@/models/bookable"
+import { BookableType } from '@/models/bookable'
 
 // @서버 Ticket
 // 사용중인 것은 used flag로
@@ -24,5 +24,5 @@ export type TicketFrame = {
   number: number // 10
   limit: number // 10
   typeName: string
-  type: "oneday" | "period" | "time" | "discount" | "billing"
+  type: 'oneday' | 'period' | 'time' | 'discount' | 'billing'
 }

@@ -1,6 +1,6 @@
-"use client"
-import { useEffect, useRef, useState } from "react"
-import Button from "@/components/molecules/Button/Button"
+'use client'
+import { useEffect, useRef, useState } from 'react'
+import Button from '@/components/molecules/Button/Button'
 
 type DialogProps = {
   trigger: React.ReactNode
@@ -29,10 +29,10 @@ export const Dialog = (props: DialogProps) => {
       }
     }
 
-    document.addEventListener("mousedown", closeDialog)
+    document.addEventListener('mousedown', closeDialog)
 
     return () => {
-      document.removeEventListener("mousedown", closeDialog)
+      document.removeEventListener('mousedown', closeDialog)
     }
   }, [showDialog])
 

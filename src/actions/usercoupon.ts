@@ -1,7 +1,7 @@
-"use server"
-import request, { gql } from "graphql-request"
-import { RedirectType, redirect } from "next/navigation"
-import { UserCoupon } from "@/models/coupon"
+'use server'
+import request, { gql } from 'graphql-request'
+import { RedirectType, redirect } from 'next/navigation'
+import { UserCoupon } from '@/models/coupon'
 
 export async function getAllUserCoupon(userId: string) {
   const GET_ALL_USERCOUPON = gql`
@@ -105,6 +105,6 @@ export async function registerUserCoupon(userId: string, couponId: string) {
   )
 
   const resultCode = data.addCouponUser.resultCode
-  const result = resultCode === "0000" ? "success" : "fail"
+  const result = resultCode === '0000' ? 'success' : 'fail'
   redirect(`/redirection/registercoupon/${result}`, RedirectType.replace)
 }

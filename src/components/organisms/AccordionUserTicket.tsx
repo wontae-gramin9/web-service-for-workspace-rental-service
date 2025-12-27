@@ -1,20 +1,20 @@
-"use client"
+'use client'
 
-import { useRouter } from "next/navigation"
-import { useState } from "react"
-import Button from "@/components/molecules/Button/Button"
-import { Dialog } from "@/components/molecules/Modal/Dialog"
-import StretchedTicket from "@/components/molecules/Ticket/StretchedTicket"
-import { refundUserTicket, unsubscribeUserTicket } from "@/gql/userticket"
-import type { UserTicket } from "@/models/ticket"
-import { formatDatetimeString, formatLeftTimeString } from "@/utils/format"
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
+import Button from '@/components/molecules/Button/Button'
+import { Dialog } from '@/components/molecules/Modal/Dialog'
+import StretchedTicket from '@/components/molecules/Ticket/StretchedTicket'
+import { refundUserTicket, unsubscribeUserTicket } from '@/gql/userticket'
+import type { UserTicket } from '@/models/ticket'
+import { formatDatetimeString, formatLeftTimeString } from '@/utils/format'
 
 const AccordionUserTicket = (props: { userTicket: UserTicket }) => {
   const router = useRouter()
   const [hidden, setHidden] = useState(true)
-  const hiddenClass = hidden ? "hidden" : ""
-  const borderDirection = hidden ? "rounded-md" : "rounded-t-md "
-  const chevronDirection = hidden ? "rotate-180" : ""
+  const hiddenClass = hidden ? 'hidden' : ''
+  const borderDirection = hidden ? 'rounded-md' : 'rounded-t-md '
+  const chevronDirection = hidden ? 'rotate-180' : ''
   const { userTicket } = props
 
   return (
@@ -50,7 +50,7 @@ const AccordionUserTicket = (props: { userTicket: UserTicket }) => {
               <p className="font-bold">만료기간</p>
               <p>{formatDatetimeString(userTicket.expiresAt)}</p>
             </div>
-            {!["period", "billing"].includes(userTicket.ticketType.type) ? (
+            {!['period', 'billing'].includes(userTicket.ticketType.type) ? (
               <div>
                 <p className="font-bold">남은시간</p>
                 <p>{formatLeftTimeString(userTicket.availableTime)}</p>
@@ -71,7 +71,7 @@ const AccordionUserTicket = (props: { userTicket: UserTicket }) => {
                 router.refresh()
               }}
             ></Dialog>
-            {userTicket.ticketType.type === "billing" ? (
+            {userTicket.ticketType.type === 'billing' ? (
               <Dialog
                 trigger={<Button color="red">구독취소</Button>}
                 title="구독취소"

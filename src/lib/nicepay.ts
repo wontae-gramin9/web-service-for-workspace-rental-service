@@ -1,13 +1,13 @@
-import request, { gql } from "graphql-request"
-import { RedirectType, redirect } from "next/navigation"
-import { Order } from "@/models/order"
+import request, { gql } from 'graphql-request'
+import { RedirectType, redirect } from 'next/navigation'
+import { Order } from '@/models/order'
 
 // 이후에 order 객체로
 export type AuthPaymentProps = {
   orderId: string
   ticketName: string
   price: number
-  paymentMethod: "cardAndEasyPay" | "samsungpayCard"
+  paymentMethod: 'cardAndEasyPay' | 'samsungpayCard'
 }
 
 export type AuthPaymentResponse = {
@@ -48,8 +48,8 @@ export const getPreNicePayOrderInfo = async (order: Order) => {
   )
 
   const { resultCode, resultMsg } = data.addOrder
-  const result = resultCode === "0000" ? "success" : "fail"
-  if (result === "fail") redirect(`/redirection/nicepay/${result}`, RedirectType.replace)
-  const [orderId, priceString, orderName] = resultMsg.split(":")
+  const result = resultCode === '0000' ? 'success' : 'fail'
+  if (result === 'fail') redirect(`/redirection/nicepay/${result}`, RedirectType.replace)
+  const [orderId, priceString, orderName] = resultMsg.split(':')
   return { orderId, priceString, orderName }
 }

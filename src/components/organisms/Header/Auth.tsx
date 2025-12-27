@@ -1,7 +1,7 @@
-import Image from "next/image"
-import Link from "next/link"
-import { getServerSession } from "next-auth"
-import { authOptions } from "@/lib/authjs"
+import Image from 'next/image'
+import Link from 'next/link'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/lib/authjs'
 
 export default async function AuthHeader() {
   const session = await getServerSession(authOptions)

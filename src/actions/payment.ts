@@ -1,7 +1,7 @@
-"use server"
-import request, { gql } from "graphql-request"
-import { redirect, RedirectType } from "next/navigation"
-import { Card } from "@/models/card"
+'use server'
+import request, { gql } from 'graphql-request'
+import { redirect, RedirectType } from 'next/navigation'
+import { Card } from '@/models/card'
 
 export async function getBillingKeyTerm() {
   const GET_BILLING_KEY_TERM_QUERY = gql`
@@ -13,7 +13,7 @@ export async function getBillingKeyTerm() {
   `
 
   type BillingKeyTermRequest = {
-    type: "eletorn" | "colletperson" | "sharinginfo" | "telcommun"
+    type: 'eletorn' | 'colletperson' | 'sharinginfo' | 'telcommun'
   }
 
   const data: {
@@ -22,7 +22,7 @@ export async function getBillingKeyTerm() {
       content: string
     }
   } = await request(process.env.NEXT_PUBLIC_APOLLO_ROUTER_URL!, GET_BILLING_KEY_TERM_QUERY, {
-    type: "eletorn",
+    type: 'eletorn',
   } as BillingKeyTermRequest)
 
   const billingKeyTerm = data.term
@@ -81,15 +81,15 @@ export async function registerUserCard(userId: string, formData: FormData) {
     }
   `
 
-  const cardNo0 = formData.get("cardNo0")?.toString()!
-  const cardNo1 = formData.get("cardNo1")?.toString()!
-  const cardNo2 = formData.get("cardNo2")?.toString()!
-  const cardNo3 = formData.get("cardNo3")?.toString()!
+  const cardNo0 = formData.get('cardNo0')?.toString()!
+  const cardNo1 = formData.get('cardNo1')?.toString()!
+  const cardNo2 = formData.get('cardNo2')?.toString()!
+  const cardNo3 = formData.get('cardNo3')?.toString()!
   const cardNo = cardNo0 + cardNo1 + cardNo2 + cardNo3
-  const expYear = formData.get("expYear")
-  const expMonth = formData.get("expMonth")
-  const idNo = formData.get("idNo")
-  const cardPw = formData.get("cardPw")
+  const expYear = formData.get('expYear')
+  const expMonth = formData.get('expMonth')
+  const idNo = formData.get('idNo')
+  const cardPw = formData.get('cardPw')
 
   const data: { cardAuth: { resultCode: string } } = await request(
     process.env.NEXT_PUBLIC_APOLLO_ROUTER_URL!,
@@ -132,7 +132,7 @@ export async function requestPaymentByUserCard(
     },
   )
   const { resultCode } = data.addOrder
-  const result = resultCode === "0000" ? "success" : "fail"
+  const result = resultCode === '0000' ? 'success' : 'fail'
   redirect(`/redirection/payment/${result}`, RedirectType.replace)
 }
 
@@ -154,6 +154,6 @@ export async function deleteCardByCardId(cardId: string, ticketId: string, coupo
     },
   )
   const resultCode = data.deleteCardByCardId.resultCode
-  const result = resultCode === "0000" ? "success" : "fail"
+  const result = resultCode === '0000' ? 'success' : 'fail'
   redirect(`/redirection/carddelete/${result}?ticketId=${ticketId}&couponId=${couponId}`, RedirectType.replace)
 }

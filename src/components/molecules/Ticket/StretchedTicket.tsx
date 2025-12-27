@@ -1,22 +1,22 @@
-import Image from "next/image"
-import { BookableType } from "@/models/bookable"
-import type { TicketFrame } from "@/models/ticket"
+import Image from 'next/image'
+import { BookableType } from '@/models/bookable'
+import type { TicketFrame } from '@/models/ticket'
 
 const StretchedTicket = (props: { ticketFrame: TicketFrame }) => {
   const { ticketFrame } = props
 
-  const borderColors: { [key in BookableType["type"]]: string } = {
-    seat: "border-blue-100",
-    meetingroom: "border-yellow-500",
-    rentbox: "border-teal-100",
-    locker: "border-purple-100",
+  const borderColors: { [key in BookableType['type']]: string } = {
+    seat: 'border-blue-100',
+    meetingroom: 'border-yellow-500',
+    rentbox: 'border-teal-100',
+    locker: 'border-purple-100',
   }
 
-  const bookableColors: { [key in BookableType["type"]]: string } = {
-    seat: "bg-blue-700",
-    meetingroom: "bg-yellow-700",
-    rentbox: "bg-teal-500",
-    locker: "bg-purple-700",
+  const bookableColors: { [key in BookableType['type']]: string } = {
+    seat: 'bg-blue-700',
+    meetingroom: 'bg-yellow-700',
+    rentbox: 'bg-teal-500',
+    locker: 'bg-purple-700',
   }
 
   return (

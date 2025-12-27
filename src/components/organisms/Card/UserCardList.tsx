@@ -1,8 +1,8 @@
-import { getUserIdAfterCheckAuthRedirect } from "@/actions/authjs"
-import { getUserCardList } from "@/actions/payment"
-import SubTitle from "@/components/molecules/Title/SubTitle"
-import UserCard from "@/components/organisms/Card/UserCard"
-import { Card } from "@/models/card"
+import { getUserIdAfterCheckAuthRedirect } from '@/actions/authjs'
+import { getUserCardList } from '@/actions/payment'
+import SubTitle from '@/components/molecules/Title/SubTitle'
+import UserCard from '@/components/organisms/Card/UserCard'
+import { Card } from '@/models/card'
 
 export default async function UserCardList(props: { ticketId: string; couponId: string | null }) {
   const { ticketId, couponId } = props

@@ -1,14 +1,14 @@
-"use client"
+'use client'
 
-import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr"
-import Link from "next/link"
-import BottomSheetButton from "@/components/molecules/Button/BottomSheetButton"
-import BottomSheetModal from "@/components/molecules/Modal/BottomSheetModal"
-import StretchedTicket from "@/components/molecules/Ticket/StretchedTicket"
-import { GET_ALL_TICKET_FRAME } from "@/gql/ticketframe"
-import useIsReactNativeWebview from "@/hooks/useIsReactNativeWebview"
+import { useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr'
+import Link from 'next/link'
+import BottomSheetButton from '@/components/molecules/Button/BottomSheetButton'
+import BottomSheetModal from '@/components/molecules/Modal/BottomSheetModal'
+import StretchedTicket from '@/components/molecules/Ticket/StretchedTicket'
+import { GET_ALL_TICKET_FRAME } from '@/gql/ticketframe'
+import useIsReactNativeWebview from '@/hooks/useIsReactNativeWebview'
 
-export const dynamic = "force-dynamic"
+export const dynamic = 'force-dynamic'
 
 const OneoffTicketList = (props: { type: string }) => {
   const isReactNativeWebview = useIsReactNativeWebview()
@@ -28,7 +28,7 @@ const OneoffTicketList = (props: { type: string }) => {
               {isReactNativeWebview ? (
                 <BottomSheetButton
                   onClick={() => {
-                    window.ReactNativeWebView.postMessage(JSON.stringify("1"))
+                    window.ReactNativeWebView.postMessage(JSON.stringify('1'))
                   }}
                 >
                   구매하기
@@ -36,7 +36,7 @@ const OneoffTicketList = (props: { type: string }) => {
               ) : (
                 <Link
                   href={{
-                    pathname: "/order",
+                    pathname: '/order',
                     query: {
                       ticketId: oneoffTicket.id,
                     },

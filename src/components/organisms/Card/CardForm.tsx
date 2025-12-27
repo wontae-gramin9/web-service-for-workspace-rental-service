@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { useRouter } from "next/navigation"
-import toast from "react-hot-toast"
-import { z } from "zod"
-import { zfd } from "zod-form-data"
-import { registerUserCard } from "@/actions/payment"
-import Button from "@/components/molecules/Button/Button"
+import { useRouter } from 'next/navigation'
+import toast from 'react-hot-toast'
+import { z } from 'zod'
+import { zfd } from 'zod-form-data'
+import { registerUserCard } from '@/actions/payment'
+import Button from '@/components/molecules/Button/Button'
 
 const CardSchema = zfd.formData({
   cardNo0: zfd.numeric(z.number().int().gte(1000).lte(9999)),
@@ -28,24 +28,24 @@ function CardForm({ userId }: CardFormProps) {
   const clientAction = async (formData: FormData) => {
     const validatedResult = CardSchema.safeParse(formData)
     if (!validatedResult.success) {
-      let errorMsg = ""
+      let errorMsg = ''
       validatedResult.error.issues.forEach((issue) => {
         const errorTarget = issue.path[0]
         switch (errorTarget) {
-          case "expYear":
-            errorMsg = "유효기간(연): 연도가 이미 지났거나, 유효한 카드의 유효기간이 아닙니다."
+          case 'expYear':
+            errorMsg = '유효기간(연): 연도가 이미 지났거나, 유효한 카드의 유효기간이 아닙니다.'
             break
-          case "expMonth":
-            errorMsg = "유효기간(월): 월은 1월부터 12월까지만 유효합니다."
+          case 'expMonth':
+            errorMsg = '유효기간(월): 월은 1월부터 12월까지만 유효합니다.'
             break
-          case "idNo":
-            errorMsg = "생년월일: 유효한 형식의 생년월일이 아닙니다."
+          case 'idNo':
+            errorMsg = '생년월일: 유효한 형식의 생년월일이 아닙니다.'
             break
-          case "cardPw":
-            errorMsg = "카드 비밀번호 앞 2자리: 숫자만 입력 가능합니다."
+          case 'cardPw':
+            errorMsg = '카드 비밀번호 앞 2자리: 숫자만 입력 가능합니다.'
             break
           default:
-            errorMsg = "카드번호: 각 입력마다 4자리의 숫자가 필요합니다."
+            errorMsg = '카드번호: 각 입력마다 4자리의 숫자가 필요합니다.'
             break
         }
       })
@@ -55,19 +55,19 @@ function CardForm({ userId }: CardFormProps) {
     }
 
     const resultCode = await registerUserCard(userId, formData)
-    if (resultCode === "0000") {
-      toast.success("카드 등록이 완료되었습니다.")
+    if (resultCode === '0000') {
+      toast.success('카드 등록이 완료되었습니다.')
       router.back()
       router.refresh()
     } else {
       toast.error(
-        "카드 등록이 실패했습니다. 카드 번호나 형식이 맞는지 다시 한번 확인해주시고, 계속 오류가 반복되면 관리자에게 문의해주세요.",
+        '카드 등록이 실패했습니다. 카드 번호나 형식이 맞는지 다시 한번 확인해주시고, 계속 오류가 반복되면 관리자에게 문의해주세요.',
       )
     }
   }
 
   const inputStyle =
-    "text-center bg-white-300 border border-black-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 block"
+    'text-center bg-white-300 border border-black-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 block'
 
   return (
     <div className="rounded-lg border border-solid border-black-500 bg-white-500 px-2 py-4">

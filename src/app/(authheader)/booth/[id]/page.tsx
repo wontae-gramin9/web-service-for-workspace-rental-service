@@ -1,10 +1,10 @@
-import Link from "next/link"
-import { getUserIdAfterCheckAuthRedirect } from "@/actions/authjs"
-import { getBoookableById, getUserActivatedBoookable } from "@/actions/booth"
-import BookableCard from "@/components/molecules/BookableCard"
-import Button from "@/components/molecules/Button/Button"
-import SubTitle from "@/components/molecules/Title/SubTitle"
-import Title from "@/components/molecules/Title/Title"
+import Link from 'next/link'
+import { getUserIdAfterCheckAuthRedirect } from '@/actions/authjs'
+import { getBoookableById, getUserActivatedBoookable } from '@/actions/booth'
+import BookableCard from '@/components/molecules/BookableCard'
+import Button from '@/components/molecules/Button/Button'
+import SubTitle from '@/components/molecules/Title/SubTitle'
+import Title from '@/components/molecules/Title/Title'
 
 export default async function BookablePage({ params }: { params: { id: string } }) {
   const { id } = params // QR코드에서 들어옴
@@ -22,7 +22,7 @@ export default async function BookablePage({ params }: { params: { id: string } 
           <div key={userActivatedBookable.id}>
             <BookableCard bookable={userActivatedBookable} />
           </div>
-          {["seat", "meetingroom"].includes(currentBookable.bookableType.type) ? (
+          {['seat', 'meetingroom'].includes(currentBookable.bookableType.type) ? (
             <div className="flex flex-col items-center justify-center gap-2">
               <p>새로운 {currentBookable.bookableType.name}으로 이동하시겠습니까?</p>
               <BookableCard bookable={currentBookable} />

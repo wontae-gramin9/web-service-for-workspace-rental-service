@@ -1,6 +1,6 @@
-"use server"
-import request, { gql } from "graphql-request"
-import { CouponFrame } from "@/models/coupon"
+'use server'
+import request, { gql } from 'graphql-request'
+import { CouponFrame } from '@/models/coupon'
 
 export async function getCouponFrame(couponFrameId: string) {
   const GET_ALL_COUPON_FRAME = gql`

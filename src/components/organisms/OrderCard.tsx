@@ -1,11 +1,11 @@
-import Link from "next/link"
-import Button from "../molecules/Button/Button"
-import StretchedTicket from "../molecules/Ticket/StretchedTicket"
-import StretchedUserCoupon from "./StretchedUserCoupon"
-import { getTicketFrameById } from "@/actions/ticketframe"
-import { getUserCouponByCouponId } from "@/actions/usercoupon"
-import SubTitle from "@/components/molecules/Title/SubTitle"
-import { TicketFrame } from "@/models/ticket"
+import Link from 'next/link'
+import Button from '../molecules/Button/Button'
+import StretchedTicket from '../molecules/Ticket/StretchedTicket'
+import StretchedUserCoupon from './StretchedUserCoupon'
+import { getTicketFrameById } from '@/actions/ticketframe'
+import { getUserCouponByCouponId } from '@/actions/usercoupon'
+import SubTitle from '@/components/molecules/Title/SubTitle'
+import { TicketFrame } from '@/models/ticket'
 
 export default async function OrderCard(props: { ticketId: string; couponId: string | null }) {
   const { ticketId, couponId } = props
@@ -16,10 +16,10 @@ export default async function OrderCard(props: { ticketId: string; couponId: str
     const userCoupon = await getUserCouponByCouponId(couponId)
     const { type, number: couponNumber } = userCoupon.type
     switch (type) {
-      case "timebonus":
+      case 'timebonus':
         ticketNumber += couponNumber
         break
-      case "discount":
+      case 'discount':
         ticketPrice -= couponNumber
         break
       default: // sale

@@ -1,20 +1,20 @@
-import Image from "next/image"
-import type { CouponFrame, UserCoupon } from "@/models/coupon"
-import { formatDateString } from "@/utils/format"
+import Image from 'next/image'
+import type { CouponFrame, UserCoupon } from '@/models/coupon'
+import { formatDateString } from '@/utils/format'
 
 const StretchedUserCoupon = (props: { userCoupon: UserCoupon }) => {
   const { userCoupon } = props
 
-  const borderColors: { [key in CouponFrame["type"]]: string } = {
-    sale: "border-teal-100",
-    timebonus: "border-orange-100",
-    discount: "border-red-100",
+  const borderColors: { [key in CouponFrame['type']]: string } = {
+    sale: 'border-teal-100',
+    timebonus: 'border-orange-100',
+    discount: 'border-red-100',
   }
 
-  const bookableColors: { [key in CouponFrame["type"]]: string } = {
-    sale: "bg-teal-500",
-    timebonus: "bg-orange-700",
-    discount: "bg-red-700",
+  const bookableColors: { [key in CouponFrame['type']]: string } = {
+    sale: 'bg-teal-500',
+    timebonus: 'bg-orange-700',
+    discount: 'bg-red-700',
   }
 
   return (

@@ -1,10 +1,10 @@
-"use server"
-import { TypedDocumentNode, gql } from "@apollo/client"
-import request from "graphql-request"
-import { GET_ALL_TICKET_FRAME } from "@/gql/ticketframe"
-import { TicketFrame } from "@/models/ticket"
+'use server'
+import { TypedDocumentNode, gql } from '@apollo/client'
+import request from 'graphql-request'
+import { GET_ALL_TICKET_FRAME } from '@/gql/ticketframe'
+import { TicketFrame } from '@/models/ticket'
 
-export async function getAllTicketFrame(type?: TicketFrame["type"]) {
+export async function getAllTicketFrame(type?: TicketFrame['type']) {
   const data = await request(process.env.NEXT_PUBLIC_APOLLO_ROUTER_URL!, GET_ALL_TICKET_FRAME, {
     type,
   })

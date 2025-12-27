@@ -1,5 +1,5 @@
-"use client"
-import { useEffect, useRef, useState } from "react"
+'use client'
+import { useEffect, useRef, useState } from 'react'
 
 type BottomSheetModalProps = {
   trigger: React.ReactNode
@@ -25,10 +25,10 @@ const BottomSheetModal = (props: BottomSheetModalProps) => {
       }
     }
 
-    document.addEventListener("mousedown", closeBottomSheetModal)
+    document.addEventListener('mousedown', closeBottomSheetModal)
 
     return () => {
-      document.removeEventListener("mousedown", closeBottomSheetModal)
+      document.removeEventListener('mousedown', closeBottomSheetModal)
     }
   }, [showBottomSheetModal])
 
@@ -40,7 +40,7 @@ const BottomSheetModal = (props: BottomSheetModalProps) => {
 
       <div
         className={`bg-black fixed inset-0 flex items-end justify-center p-4 transition-transform ${
-          showBottomSheetModal ? "translate-y-0" : "translate-y-full"
+          showBottomSheetModal ? 'translate-y-0' : 'translate-y-full'
         }`}
       >
         <div

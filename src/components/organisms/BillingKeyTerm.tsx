@@ -1,4 +1,4 @@
-import { getBillingKeyTerm } from "@/actions/payment"
+import { getBillingKeyTerm } from '@/actions/payment'
 
 export default async function BillingKeyTerm() {
   const billingKeyTerm = await getBillingKeyTerm()
